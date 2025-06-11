@@ -1,0 +1,24 @@
+# Local Terraform state
+*.tfstate
+*.tfstate.backup
+
+# Crash logs
+crash.log
+
+# Terraform CLI configuration files
+.terraformrc
+terraform.rc
+
+# .terraform/ provider plugins and lock files
+.terraform/
+
+# Terraform plan files
+*.tfplan
+
+# Secrets (if any exist locally)
+*.pem
+*.key
+*.env
+
+# macOS system files
+.DS_Store
