@@ -31,7 +31,7 @@ resource "aws_nat_gateway" "this" {
 }
 
 resource "aws_subnet" "public" {
-  count = 2
+  count                   = 2
   vpc_id                  = aws_vpc.this.id
   cidr_block              = var.public_subnet_cidrs[count.index]
   availability_zone       = var.azs[count.index]
@@ -42,7 +42,7 @@ resource "aws_subnet" "public" {
 }
 
 resource "aws_subnet" "private" {
-  count = 2
+  count             = 2
   vpc_id            = aws_vpc.this.id
   cidr_block        = var.private_subnet_cidrs[count.index]
   availability_zone = var.azs[count.index]

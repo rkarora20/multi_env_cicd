@@ -37,10 +37,10 @@ resource "aws_security_group" "app_sg" {
   vpc_id      = var.vpc_id
 
   ingress {
-    description = "App Port"
-    from_port   = var.app_port
-    to_port     = var.app_port
-    protocol    = "tcp"
+    description     = "App Port"
+    from_port       = var.app_port
+    to_port         = var.app_port
+    protocol        = "tcp"
     security_groups = [aws_security_group.web_sg.id]
   }
 
@@ -62,10 +62,10 @@ resource "aws_security_group" "db_sg" {
   vpc_id      = var.vpc_id
 
   ingress {
-    description = "DB Port"
-    from_port   = var.db_port
-    to_port     = var.db_port
-    protocol    = "tcp"
+    description     = "DB Port"
+    from_port       = var.db_port
+    to_port         = var.db_port
+    protocol        = "tcp"
     security_groups = [aws_security_group.app_sg.id]
   }
 
