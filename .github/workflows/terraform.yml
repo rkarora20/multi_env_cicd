@@ -15,7 +15,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: multi_env/envs/dev
+        working-directory: envs/dev
 
     env:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -34,7 +34,7 @@ jobs:
         run: terraform fmt -check -recursive
 
       - name: Terraform Init
-        run: terraform init -backend-config=../../backend/backend.tf
+        run: terraform init -backend-config=../backend/backend.tf
 
       - name: Terraform Validate
         run: terraform validate
